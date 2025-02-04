@@ -250,6 +250,11 @@ body {
     margin: 0px;
     padding: 0px;
     font-family: sans-serif;
+    background: #d8d8dd;
+    background-image: url(manhattan.jpeg);
+    background-size: cover;
+    min-height: 100vh;
+    backdrop-filter: brightness(0.8);
 }
 nav {
     display: flex;
@@ -258,6 +263,7 @@ nav {
     justify-content: space-around;
     align-items: center;
     background: #333;
+    height: 4em;
 }
 nav .icon{
   font-style: italic;
@@ -265,7 +271,6 @@ nav .icon{
   font-family: serif;
 }
 nav .icon img {
-    filter: invert(1);
     height: 2em;
 }
 nav ul {
@@ -315,10 +320,79 @@ nav form button {
   padding-right: 1em;
   position: absolute;
   top: .5em;
+  cursor: pointer;
 }
 #btnClear{
   right: 1em;
 }
 #btnSearch{
   right: 6em;
+}
+div#social {
+  position: fixed;
+  width: 2em;
+  left: .5em;
+  height: calc(100vh - 4em);
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  justify-content: space-around;
+  align-items: stretch;
+}
+#social .line:before {
+    content: '';
+    background: white;
+    width: 1px;
+    height: calc((50vh - 4em) * .8);
+    display: block;
+    position: absolute;
+    top: 10%;
+    left: 1em;
+}
+#social .iconos {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
+    height: calc((50vh - 4em) * .8);
+}
+section#home .textos {
+    width: 50%;
+    color: white;
+}
+
+section#home {
+    width: calc(100vw - 12em);
+    margin-left: 6em;
+    display: flex;
+    height: 80%;
+    margin-top: 10%;
+}
+
+#home h1 {
+    font-weight: 900;
+    font-size: 5em;
+    line-height: 1em;
+    text-shadow: 1px 1px 2px black;
+}
+
+#home .textos p {
+    font-size: 1.2em;
+    text-shadow: 1px 1px 2px black;
+}
+
+button#btnBookNow {
+    background: teal;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.1em;
+    border: none;
+    padding: .5em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    border-radius: 7px;
+    cursor: pointer;
 }
