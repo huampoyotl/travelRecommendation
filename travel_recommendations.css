@@ -245,3 +245,80 @@ textarea {
   }
 }
 
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+nav {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+    background: #333;
+}
+nav .icon{
+  font-style: italic;
+  font-weight: bold;
+  font-family: serif;
+}
+nav .icon img {
+    filter: invert(1);
+    height: 2em;
+}
+nav ul {
+    list-style: none;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav ul li {
+    display: block;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+nav a {color: white;text-decoration: none;}
+
+nav form {
+    position: relative;
+}
+input#searchInput {
+    color: teal;
+    padding: 1em;
+    padding-left: 2em;
+    padding-right: 10em;
+    border: none;
+    border-radius: 2em;
+    width: 19em;
+    position: relative;
+}
+input#searchInput::placeholder { 
+  color: rgb(154, 191, 191);
+}
+nav form img {
+    position: absolute;
+    top: .5em;
+    right: 9.5em;
+}
+nav form button {
+  background: teal;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: .5em;
+  padding-left: 1em;
+  padding-right: 1em;
+  position: absolute;
+  top: .5em;
+}
+#btnClear{
+  right: 1em;
+}
+#btnSearch{
+  right: 6em;
+}
