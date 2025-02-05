@@ -358,9 +358,11 @@ div#social {
     align-items: center;
     height: calc((50vh - 4em) * .8);
 }
+section .textos{
+  color: white;
+}
 section#home .textos {
     width: 50%;
-    color: white;
 }
 
 section#home {
@@ -371,14 +373,15 @@ section#home {
     margin-top: 10%;
 }
 
-#home h1 {
+section .textos h1 {
     font-weight: 900;
     font-size: 5em;
     line-height: 1em;
     text-shadow: 1px 1px 2px black;
+    text-transform: uppercase;
 }
 
-#home .textos p {
+section .textos p {
     font-size: 1.2em;
     text-shadow: 1px 1px 2px black;
 }
@@ -395,4 +398,11 @@ button#btnBookNow {
     padding-right: 1.5em;
     border-radius: 7px;
     cursor: pointer;
+}
+section#about_us {
+  width: calc(100vw - 12em);
+  margin-left: 6em;
+  display: flex;
+  height: 80%;
+  margin-top: 10%;
 }
