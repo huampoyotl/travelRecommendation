@@ -470,3 +470,65 @@ button#btnSubmit {
     cursor: pointer;
     width: 100%;
 }
+section#results {
+    position: fixed;
+    right: 4em;
+    top: 6em;
+    width: 40em;
+    max-height: calc(100vh - 6em);
+    overflow-y: auto;
+    display: none;
+}
+section#results.shown{
+  display: block;
+}
+section#results p.error{
+  color: rgb(189, 82, 82);
+  background: rgba(255, 255, 255, 0.778);
+  padding: 1em;
+  border-radius: 5px;
+}
+#results .result {
+    width: 100%;
+    display: flex;
+    background: white;
+    border-radius: 1em;
+    overflow: hidden;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+}
+#results .result .image {
+    height: 19em;
+    object-fit: cover;
+    width: 100%;
+}
+
+#results .result .image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+#results .result h3 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+#results .result p {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+#results .result button {
+    margin-left: 1rem;
+    background: teal;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: .5em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+}
