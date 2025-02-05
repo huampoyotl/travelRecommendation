@@ -406,3 +406,67 @@ section#about_us {
   height: 80%;
   margin-top: 10%;
 }
+section#contact {
+  width: calc(100vw - 12em);
+      margin-left: 6em;
+      display: flex;
+      height: 80%;
+      margin-top: 10%;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-content: center;
+      justify-content: space-between;
+      align-items: flex-start;  
+}
+section#contact .textos {
+    width: 50%;
+}
+
+section#contact form {
+    width: 50%;
+    padding-left: 4em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: stretch;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: calc((100vh - 4em) * .6);
+}
+
+section#contact form div {width: 100%;}
+
+section#contact form label {
+    display: block;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+section#contact form input, section#contact form textarea {
+    width: 100%;
+    padding: 1em;
+    background: transparent;
+    border: solid 1px #AAAAAA;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    border-radius: 7px;
+    margin-top: .5em;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+section#contact form input::placeholder, section#contact form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.648);
+  text-shadow: 1px 1px 2px black;
+}
+button#btnSubmit {
+    background: teal;
+    color: white;
+    font-size: 1.1em;
+    border: none;
+    padding: .5em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    border-radius: 7px;
+    cursor: pointer;
+    width: 100%;
+}

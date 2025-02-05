@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Travel recommendation project</title>
+		<link href="travel_recommendations.css" rel="stylesheet"/>
+	</head>
+	<body>
+		<nav>
+			<div class="icon">
+				<a href="/"><img src="/plane.svg"/>
+				TravelBloom</a>
+			</div>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/about_us.html">About us</a></li>
+				<li><a href="/contact.html">Contact us</a></li>
+			</ul>
+			<form>
+				<input type="text" id="searchInput" placeholder="Enter a destination or keyword"/>
+				<img src="search.svg" />
+				<button id="btnSearch">Search</button>
+				<button id="btnClear">Clear</button>
+			</form>
+		</nav>
+		<div id="social">
+			<div class="line"></div>
+			<div class="iconos">
+				<img src="twitter.svg" />
+				<img src="facebook.svg" />
+				<img src="instagram.svg" />
+				<img src="youtube.svg" />
+			</div>
+		</div>
+		<section id="contact">
+			<div class="textos">
+				<h1>Contact</h1>
+				<p>Get in touch</p>
+			</div>
+			<form>
+				<div>
+					<label for="inputName">Name</label>
+					<input type="text" id="inputName" placeholder="Enter your name" />
+				</div>
+				<div>
+					<label for="inputEmail">Email</label>
+					<input type="email" id="inputEmail" placeholder="Enter your email" />
+				</div>
+				<div>
+					<label for="inputMessage">Message</label>
+					<textarea id="inputMessage" placeholder="Enter your message" rows="8"></textarea>
+				</div>
+				<button id="btnSubmit">Submit</button>
+			</form>
+		</section>
+	</body>
+</html>
