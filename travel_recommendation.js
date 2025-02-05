@@ -1,6 +1,7 @@
 var apiData=null;
 
 document.getElementById('btnSearch').addEventListener('click',searchAPI);
+document.getElementById('btnClear').addEventListener('click',clearResults);
 
 document.querySelectorAll('form').forEach(form => {
 	form.onsubmit = event => event.preventDefault();
@@ -30,12 +31,13 @@ function searchAPI(){
 		searchTerm=searchTerm.trim().toLowerCase();
 		if(searchTerm.length>0){
 			let results=new Array();
-			let isCity=false;
+			let timeZone=false;
 			for (var k in apiData) {
 				// search of keyword
 				if(k.toLowerCase().indexOf(searchTerm)>=0 && k!=="countries"){
 					for (let i = 0; i < apiData[k].length; i++) {
 						let card=recommendationCard(apiData[k][i]);
+						timeZone=apiData[k][i].timeZone;
 						results.push(card);
 					}
 				}
@@ -44,10 +46,12 @@ function searchAPI(){
 						if(k=="countries"){
 							for (let j = 0; j < apiData[k][i].cities.length; j++) {
 								let card=recommendationCard(apiData[k][i].cities[j]);
+								timeZone=apiData[k][i].cities[j].timeZone;
 								results.push(card);
 							}
 						}else{
 							let card=recommendationCard(apiData[k][i]);
+							timeZone=apiData[k][i].timeZone;
 							results.push(card);
 						}
 					}
@@ -57,6 +61,7 @@ function searchAPI(){
 				for (let j = 0; j < apiData.countries[i].cities.length; j++) {
 					if(apiData.countries[i].cities[j].name.toLowerCase().indexOf(searchTerm)>=0){
 						let card=recommendationCard(apiData.countries[i].cities[j]);
+						timeZone=apiData.countries[i].cities[j].timeZone;
 						results.push(card);
 					}
 				}
@@ -68,7 +73,14 @@ function searchAPI(){
 					document.getElementById('results').innerHTML='';
 				},1500);
 			}else{
-				document.getElementById('results').innerHTML=results.join('');
+				if(results.length==1){
+					let options = { timeZone: timeZone, hour12: true, hour: 'numeric', minute: 'numeric', second: 'numeric' };
+					let time=new Date().toLocaleTimeString('en-US', options);
+					document.getElementById('results').innerHTML='<p class="time">Current time: '+time+'</p>'
+						+results.join('');
+				}else{
+					document.getElementById('results').innerHTML=results.join('');
+				}
 			}
 			document.getElementById('results').classList.add('shown');
 		}else{
@@ -90,4 +102,10 @@ function recommendationCard(place){
 	+'<button>Visit</button>'
 	+'</div>'
 	return card;
+}
+
+function clearResults(){
+	document.getElementById('results').classList.remove('shown');
+	document.getElementById('results').innerHTML='';
+	document.getElementById('searchInput').value='';
 }
